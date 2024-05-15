@@ -33,6 +33,10 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
+            this.mamonhoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenmonhoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotinchi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +47,11 @@
             this.dgvDSMH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSMH.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvDSMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mamonhoc,
+            this.tenmonhoc,
+            this.sotinchi,
+            this.btnDelete});
             this.dgvDSMH.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSMH.Location = new System.Drawing.Point(0, 115);
             this.dgvDSMH.MultiSelect = false;
@@ -53,6 +62,7 @@
             this.dgvDSMH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSMH.Size = new System.Drawing.Size(800, 335);
             this.dgvDSMH.TabIndex = 0;
+            this.dgvDSMH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMH_CellClick);
             this.dgvDSMH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMH_CellContentClick);
             this.dgvDSMH.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMH_CellContentDoubleClick);
             this.dgvDSMH.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMH_CellDoubleClick);
@@ -97,6 +107,39 @@
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
+            // mamonhoc
+            // 
+            this.mamonhoc.DataPropertyName = "mamonhoc";
+            this.mamonhoc.HeaderText = "Mã môn học";
+            this.mamonhoc.MinimumWidth = 6;
+            this.mamonhoc.Name = "mamonhoc";
+            this.mamonhoc.ReadOnly = true;
+            // 
+            // tenmonhoc
+            // 
+            this.tenmonhoc.DataPropertyName = "tenmonhoc";
+            this.tenmonhoc.HeaderText = "Tên môn học";
+            this.tenmonhoc.MinimumWidth = 6;
+            this.tenmonhoc.Name = "tenmonhoc";
+            this.tenmonhoc.ReadOnly = true;
+            // 
+            // sotinchi
+            // 
+            this.sotinchi.DataPropertyName = "sotinchi";
+            this.sotinchi.HeaderText = "Số TC";
+            this.sotinchi.MinimumWidth = 6;
+            this.sotinchi.Name = "sotinchi";
+            this.sotinchi.ReadOnly = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.MinimumWidth = 6;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.UseColumnTextForButtonValue = true;
+            // 
             // frmDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -124,5 +167,9 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThemMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mamonhoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenmonhoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sotinchi;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
     }
 }

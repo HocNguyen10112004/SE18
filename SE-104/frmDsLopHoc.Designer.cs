@@ -33,6 +33,12 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.dgvLopHoc = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.malophoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mamonhoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenmonhoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotinchi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +74,13 @@
             this.dgvLopHoc.AllowUserToDeleteRows = false;
             this.dgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.malophoc,
+            this.mamonhoc,
+            this.tenmonhoc,
+            this.sotinchi,
+            this.gvien,
+            this.btnDelete});
             this.dgvLopHoc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvLopHoc.Location = new System.Drawing.Point(0, 77);
             this.dgvLopHoc.MultiSelect = false;
@@ -78,6 +91,7 @@
             this.dgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLopHoc.Size = new System.Drawing.Size(800, 373);
             this.dgvLopHoc.TabIndex = 3;
+            this.dgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellClick);
             this.dgvLopHoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellDoubleClick);
             // 
             // btnTimKiem
@@ -89,6 +103,55 @@
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // malophoc
+            // 
+            this.malophoc.DataPropertyName = "malophoc";
+            this.malophoc.HeaderText = "Mã lớp học";
+            this.malophoc.MinimumWidth = 6;
+            this.malophoc.Name = "malophoc";
+            this.malophoc.ReadOnly = true;
+            // 
+            // mamonhoc
+            // 
+            this.mamonhoc.DataPropertyName = "mamonhoc";
+            this.mamonhoc.HeaderText = "Mã môn học";
+            this.mamonhoc.MinimumWidth = 6;
+            this.mamonhoc.Name = "mamonhoc";
+            this.mamonhoc.ReadOnly = true;
+            // 
+            // tenmonhoc
+            // 
+            this.tenmonhoc.DataPropertyName = "tenmonhoc";
+            this.tenmonhoc.HeaderText = "Tên môn học";
+            this.tenmonhoc.MinimumWidth = 6;
+            this.tenmonhoc.Name = "tenmonhoc";
+            this.tenmonhoc.ReadOnly = true;
+            // 
+            // sotinchi
+            // 
+            this.sotinchi.DataPropertyName = "sotinchi";
+            this.sotinchi.HeaderText = "Số TC";
+            this.sotinchi.MinimumWidth = 6;
+            this.sotinchi.Name = "sotinchi";
+            this.sotinchi.ReadOnly = true;
+            // 
+            // gvien
+            // 
+            this.gvien.DataPropertyName = "gvien";
+            this.gvien.HeaderText = "Giáo viên";
+            this.gvien.MinimumWidth = 6;
+            this.gvien.Name = "gvien";
+            this.gvien.ReadOnly = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.MinimumWidth = 6;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseColumnTextForButtonValue = true;
             // 
             // frmDsLopHoc
             // 
@@ -116,5 +179,11 @@
         private System.Windows.Forms.Button btnThemMoi;
         private System.Windows.Forms.DataGridView dgvLopHoc;
         private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn malophoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mamonhoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenmonhoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sotinchi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gvien;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
     }
 }

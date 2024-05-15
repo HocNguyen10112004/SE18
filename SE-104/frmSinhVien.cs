@@ -38,14 +38,7 @@ namespace ABD
                 txtTendem.Text = r["tendem"].ToString();
                 txtTen.Text = r["ten"].ToString();
                 mtbNgaysinh.Text = r["ngsinh"].ToString();
-                if (int.Parse(r["gtinh"].ToString()) == 1)
-                {
-                    rbtNam.Checked = true;
-                }
-                else
-                {
-                    rbtNu.Checked = true;
-                }
+                rbtNam.Checked = r["gtinh"].ToString() == "1" ? true : false;
                 txtQuequan.Text = r["quequan"].ToString();
                 txtDiachi.Text = r["diachi"].ToString();
                 txtDienthoai.Text = r["dienthoai"].ToString();

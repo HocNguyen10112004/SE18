@@ -56,5 +56,35 @@ namespace ABD
             tukhoa = txtTimKiem.Text;
             LoadDSLH();
         }
+
+        private void dgvLopHoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == dgvLopHoc.Columns["btnDelete"].Index)
+                {
+                    if (MessageBox.Show("Bạn chắc chắn muốn xóa lớp học: " + dgvLopHoc.Rows[e.RowIndex].Cells["tenmonhoc"].Value.ToString() + " ?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+
+                        var malh = dgvLopHoc.Rows[e.RowIndex].Cells["malophoc"].Value.ToString().ToLower();
+                        var sql = "deleteLH";
+                        var lstPara = new List<CustomParameter>()
+                    {
+                        new CustomParameter
+                        {
+                            key="malophoc",
+                            value = malh
+                        }
+                    };
+                        new Database().ExeCute(sql, lstPara);
+
+                        MessageBox.Show("Xóa lớp học thành công");
+                        LoadDSLH();
+                    }
+
+                }
+            }
+        }
     }
 }

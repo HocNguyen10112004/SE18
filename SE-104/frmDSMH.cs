@@ -67,5 +67,35 @@ namespace ABD
                 LoadDSMH();
             }
         }
+
+        private void dgvDSMH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == dgvDSMH.Columns["btnDelete"].Index)
+                {
+                    if (MessageBox.Show("Bạn chắc chắn muốn xóa môn học " + dgvDSMH.Rows[e.RowIndex].Cells["tenmonhoc"].Value.ToString() + " ?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+
+                        var maMH = dgvDSMH.Rows[e.RowIndex].Cells["mamonhoc"].Value.ToString().ToLower();
+                        var sql = "deleteMH";
+                        var lstPara = new List<CustomParameter>()
+                    {
+                        new CustomParameter
+                        {
+                            key="mamonhoc",
+                            value = maMH
+                        }
+                    };
+                        new Database().ExeCute(sql, lstPara);
+
+                        MessageBox.Show("Xóa môn học thành công");
+                        LoadDSMH();
+                    }
+
+                }
+            }
+        }
     }
 }
